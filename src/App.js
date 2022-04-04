@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, MyPokemon, PokemonDetail } from "./pages";
+import { Home, MyPokemon, PokemonDetail } from "pages";
+import { Layout } from 'containers';
 import { Global } from '@emotion/react';
 import { GlobalStyles } from './_styles';
 
@@ -8,9 +9,9 @@ function App() {
     <>
       <Global styles={GlobalStyles} />
       <Routes>
-        <Route path="/">
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="my-pokemon" element={<MyPokemon />} />
+          <Route path="my-pokemons" element={<MyPokemon />} />
           <Route path="detail/:name" element={<PokemonDetail />} />
         </Route>
       </Routes>
