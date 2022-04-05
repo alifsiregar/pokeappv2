@@ -4,9 +4,11 @@ import { Card } from 'components';
 import { useLazyQuery } from '@apollo/client';
 import { GET_POKEMONS } from 'store/pokemons/actions';
 import { HomeContainer } from './_style';
+import { useLoading } from "store/loading/context";
 
 const Home = () => {
 
+  const { state: loadingState, dispatch: dispatchLoading } = useLoading();
   const [pageOffset, setPageOffset] = useState(0);
 
   const gqlVariables = {
@@ -22,7 +24,19 @@ const Home = () => {
     getPokemons();
   }, [getPokemons]);
 
-  console.log("ini data ==> ", data);
+  useEffect(() => {
+    if(!loading){
+      dispatchLoading({
+        type: "loading/show",
+        payload: "Now Loading"
+      });
+    } else {
+      dispatchLoading({
+        type: "loading/hide",
+        payload: "Now Loading"
+      });
+    }
+  }, [loading])
 
   return (
     <div css={HomeContainer}>
