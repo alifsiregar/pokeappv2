@@ -26,3 +26,9 @@ export const CardImage = css`
     border-radius: 25px;
     margin: 10px 0 20px 0;
 `;
+
+export const CardButtons = css`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+`;

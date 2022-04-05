@@ -30,6 +30,9 @@ const Home = () => {
         key={item.id}
         name={item.name}
         image={item.image}
+        buttonText="Details"
+        detailButton
+        catchButton
       />})}
     </div>
   )
