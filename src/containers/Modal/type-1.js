@@ -55,7 +55,7 @@ const Modal = () => {
 
   return (
     <>
-      <div css={ModalBackground} />
+      <div title="ModalType1" css={ModalBackground} />
       <div css={ModalContainer}>
         <div css={ModalText}>
           <h2>Pokemon Caught!</h2>

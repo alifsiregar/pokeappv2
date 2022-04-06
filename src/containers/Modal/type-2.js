@@ -32,7 +32,7 @@ const Modal = ({ onClick }) => {
 
   return (
     <>
-      <div css={ModalBackground} />
+      <div title="ModalType2" css={ModalBackground} />
       <div css={ModalContainer}>
         <div css={ModalText}>
           <h2>The Pokemon Ran Away!</h2>

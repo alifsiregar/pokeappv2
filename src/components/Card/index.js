@@ -17,12 +17,9 @@ const Card = ({
   detailButton,
   removeButton,
   image,
-  buttonText,
-  buttonColor,
-  buttonBgColor,
 }) => {
   return (
-    <div css={CardContainer}>
+    <div title="Card" css={CardContainer}>
       <span css={CardLabel}>Pokemon Name:</span>
       <span css={CardName}>{name}</span>
       {nickname && (

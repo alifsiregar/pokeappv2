@@ -10,7 +10,7 @@ const Navbar = () => {
   const myPokemons = state.myPokemon.length;
 
   return (
-    <div css={Nav}>
+    <div title="Navbar" css={Nav}>
       <div className="inner-navbar">
         <Link to="/" css={Logo}>
           <span className="top">POKEAPP</span>

@@ -34,7 +34,7 @@ const LoadingOverlay = ({ text }) => {
 
   return (
     <>
-      <div css={LoadingContainer} />
+      <div title="LoadingOverlay" css={LoadingContainer} />
       <div css={LoadingText}>{text}</div>
     </>
   );
