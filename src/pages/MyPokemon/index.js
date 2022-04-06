@@ -1,7 +1,13 @@
 /** @jsxImportSource @emotion/react */
-import { MyPokemonsContainer } from "./_style";
+import {
+  MyPokemonsContainer,
+  MyPokemonsHeader,
+  MyPokemonsTitle,
+  MyPokemonsOwned,
+  MyPokemonsCardContainer,
+  MyPokemonsEmptyContainer,
+} from "./_style";
 import { usePokemon } from "store/pokemons/context";
-import { useLoading } from "store/loading/context";
 import { Card } from "components";
 
 const MyPokemon = () => {
@@ -13,25 +19,39 @@ const MyPokemon = () => {
     const newPokemons = myPokemons.filter((e, i) => i !== index);
     dispatch({
       type: "set_myPokemon",
-      payload: [...newPokemons]
-    })
-  }
+      payload: [...newPokemons],
+    });
+  };
 
   return (
     <div css={MyPokemonsContainer}>
-      {myPokemons.map((item) => {
-          return (
-            <Card
-              key={item.id}
-              name={item.name}
-              image={item.image}
-              nickname={item.nickName}
-              buttonText="Details"
-              removeButton
-              onClick={() => removePokemon(item)}
-            />
-          );
-        })}
+      <div css={MyPokemonsHeader}>
+        <span css={MyPokemonsTitle}>My Pokemons</span>
+        <span css={MyPokemonsOwned}>Pokemon Owned: {myPokemons.length}</span>
+      </div>
+      <div css={MyPokemonsCardContainer}>
+        {myPokemons.length !== 0 ? (
+          myPokemons.map((item, idx) => {
+            return (
+              <Card
+                key={String(idx)}
+                name={item.name}
+                image={item.image}
+                nickname={item.nickName}
+                buttonText="Details"
+                removeButton
+                onClick={() => removePokemon(item)}
+              />
+            );
+          })
+        ) : (
+          <div css={MyPokemonsEmptyContainer}>
+            <h1>
+              No pokemon yet. <br /> Start catching some!
+            </h1>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

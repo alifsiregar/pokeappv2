@@ -37,7 +37,7 @@ const Modal = ({ onClick }) => {
         <div css={ModalText}>
           <h2>The Pokemon Ran Away!</h2>
           <span>
-            Unfortunately, the pokemon ran away :( Would you like to try again?
+            Unfortunately, the pokemon ran away.<br /> Would you like to try again?
           </span>
         </div>
         <div css={ModalButtons}>

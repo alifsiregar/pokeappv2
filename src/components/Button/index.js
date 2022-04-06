@@ -10,11 +10,6 @@ const Button = ({ onClick, text, color, fontColor }) => {
     padding: 10px;
     border-radius: 100px;
     cursor: pointer;
-    @media only screen and (min-width: 420px) {
-      &.catch-button {
-        width: 350px;
-      }
-    }
   `;
 
   const ButtonLabel = css`

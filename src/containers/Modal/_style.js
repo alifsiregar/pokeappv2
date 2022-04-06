@@ -29,6 +29,11 @@ export const ModalContainer = css`
     max-width: 350px; 
     margin: 10px;
     padding: 10px;
+
+    @media only screen and (max-width: 750px) {
+        max-width: 325px; 
+        width: 100%; 
+    }
 `;
 
 export const ModalText = css`

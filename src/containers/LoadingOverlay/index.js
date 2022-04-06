@@ -26,6 +26,10 @@ const LoadingOverlay = ({ text }) => {
     left: 50%;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
+
+    @media only screen and (max-width: 750px) {
+      font-size: 3rem;
+    }
   `;
 
   return (
