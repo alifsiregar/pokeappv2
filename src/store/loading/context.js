@@ -12,7 +12,7 @@ export const LoadingProvider = ({ children }) => {
 
   return (
     <LoadingContext.Provider value={{ state, dispatch }}>
-      <LoadingOverlay active={state.loading} text={state.message} />
+      {state.loading && <LoadingOverlay text={state.message} />}
       {children}
     </LoadingContext.Provider>
   );

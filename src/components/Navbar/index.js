@@ -2,8 +2,13 @@
 import { Link } from "react-router-dom";
 import { Nav, Logo, MyPokemonsButton, PokeballLogo } from "./_style";
 import { Pokeball } from "assets/icons";
+import { usePokemon } from "store/pokemons/context";
 
 const Navbar = () => {
+
+  const { state } = usePokemon();
+  const myPokemons = state.myPokemon.length;
+
   return (
     <div css={Nav}>
       <div className="inner-navbar">
@@ -14,7 +19,7 @@ const Navbar = () => {
         <Link to="my-pokemons" css={MyPokemonsButton}>
           <img src={Pokeball} alt="My Pokemons Button" css={PokeballLogo} />
           <span className="label">Pokemons Owned:</span>
-          <span>(3)</span>
+          <span>({myPokemons})</span>
         </Link>
       </div>
     </div>

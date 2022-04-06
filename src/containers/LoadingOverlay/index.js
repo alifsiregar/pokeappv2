@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-const LoadingOverlay = ({ active, text }) => {
+const LoadingOverlay = ({ text }) => {
   const LoadingContainer = css`
     position: fixed;
     top: 0;
@@ -14,7 +14,6 @@ const LoadingOverlay = ({ active, text }) => {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: ${active ? "flex" : "none"};
   `;
 
   const LoadingText = css`
@@ -26,7 +25,6 @@ const LoadingOverlay = ({ active, text }) => {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: ${active ? "flex" : "none"};
     text-transform: uppercase;
   `;
 

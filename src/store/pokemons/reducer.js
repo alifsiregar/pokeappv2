@@ -1,11 +1,14 @@
 export const reducer = (state, action) => {
     switch (action.type) {
 
-        case "set_pokemons":
-            return { ...state, pokemons: [...action.payload] };
+        case "set_myPokemon":
+            return { ...state, myPokemon: action.payload };
 
-        case "set_myPokemons":
-            return { ...state, isLoading: [...action.payload] };
+        case "set_pokemon":
+            return { ...state, wildPokemon: action.payload };
+        
+        case "pokemon_caught":
+            return { ...state, pokemonCaught: action.payload };
 
         default:
             return state;
@@ -13,6 +16,7 @@ export const reducer = (state, action) => {
 };
 
 export const initialState = {
-    pokemons: [],
-    myPokemons: [],
+    myPokemon: [],
+    wildPokemon: {},
+    pokemonCaught: null,
 };

@@ -23,7 +23,7 @@ const Button = ({ onClick, text, color, fontColor }) => {
   `;
 
   return (
-    <button type="submit" css={ButtonContainer}>
+    <button type="submit" css={ButtonContainer} onClick={() => onClick()}>
       <span css={ButtonLabel}>
         {text}
       </span>

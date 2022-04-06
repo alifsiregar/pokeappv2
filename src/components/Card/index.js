@@ -8,6 +8,7 @@ const Card = ({
   nickname,
   catchButton,
   detailButton,
+  removeButton,
   image,
   buttonText,
   buttonColor,
@@ -25,11 +26,11 @@ const Card = ({
       )}
       <img src={image} css={CardImage} alt="Pokemon Name" />
       <div css={CardButtons}>
-        { !detailButton && !catchButton &&
-          <Button text={buttonText} color={buttonBgColor} fontColor={buttonColor} onClick={() => onClick()} />
+        { removeButton &&
+          <Button text="Remove Pokemon" color="#DA0037" fontColor="#EDEDED" onClick={() => onClick()} />
         }
         { detailButton &&
-          <Button text="Details" color="#EDEDED" fontColor="#171717" onClick={() => onClick()} />
+          <Button text="Details" color="#EDEDED" fontColor="#171717" />
         }
         {catchButton && (
           <Button text="Catch Pokemon!" color="#DA0037" fontColor="#EDEDED" onClick={() => onClick()} />
