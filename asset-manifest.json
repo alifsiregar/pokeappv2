@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/pokeappv2/static/js/main.c2f51544.js",
+    "static/media/pokeball.webp": "/pokeappv2/static/media/pokeball.215348e6ada4d3e64173.webp",
+    "index.html": "/pokeappv2/index.html",
+    "main.c2f51544.js.map": "/pokeappv2/static/js/main.c2f51544.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c2f51544.js"
+  ]
+}
