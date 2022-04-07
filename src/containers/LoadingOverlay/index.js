@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import PropTypes from "prop-types";
 import { css } from "@emotion/react";
 
 const LoadingOverlay = ({ text }) => {
@@ -38,6 +39,10 @@ const LoadingOverlay = ({ text }) => {
       <div css={LoadingText}>{text}</div>
     </>
   );
+};
+
+LoadingOverlay.propTypes = {
+  text: PropTypes.string,
 };
 
 export default LoadingOverlay;

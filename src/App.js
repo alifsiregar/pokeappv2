@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { usePokemon } from "store/pokemons/context";
 import { Routes, Route } from "react-router-dom";
 import { Home, MyPokemon, PokemonDetail } from "pages";
-import { Layout } from "containers";
+import { ErrorPage, Layout } from "containers";
 import { Global } from "@emotion/react";
 import { GlobalStyles } from "./_styles";
 
@@ -31,6 +32,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="my-pokemons" element={<MyPokemon />} />
           <Route path="detail/:name" element={<PokemonDetail />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
     </>

@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import PropTypes from "prop-types";
 import {
   ModalBackground,
   ModalContainer,
@@ -60,5 +61,9 @@ const Modal = ({ onClick }) => {
     </>
   );
 };
+
+Modal.propTypes = {
+  onClick: PropTypes.func,
+}
 
 export default Modal;

@@ -35,7 +35,6 @@ const Modal = () => {
       myPokemons.find((e) => e.nickName.toLowerCase() === name.toLowerCase()) === undefined
     ) {
       const newPokemon = { ...state.wildPokemon, nickName: name };
-      console.log("newPokemon", newPokemon);
       dispatch({
         type: "set_myPokemon",
         payload: [...state.myPokemon, newPokemon],

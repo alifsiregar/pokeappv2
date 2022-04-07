@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import PropTypes from "prop-types";
 import {
   CardContainer,
   CardLabel,
@@ -55,5 +56,16 @@ const Card = ({
     </div>
   );
 };
+
+Card.propTypes = {
+  name: PropTypes.string,
+  onClick: PropTypes.func,
+  nickname: PropTypes.string,
+  catchButton:PropTypes.bool,
+  detailButton: PropTypes.bool,
+  removeButton: PropTypes.bool,
+  image: PropTypes.string,
+};
+
 
 export default Card;

@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
@@ -19,6 +20,7 @@ import { useLoading } from "store/loading/context";
 import { usePokemon } from "store/pokemons/context";
 import { catchChance } from "utils";
 import { Modal } from "containers";
+import { ErrorPage } from "containers";
 
 const PokemonDetail = () => {
   const params = useParams();
@@ -78,7 +80,9 @@ const PokemonDetail = () => {
     }
   }, [loading]);
 
-  console.log("data", data);
+  if(error || data?.pokemon.id === null) return <ErrorPage />
+
+  console.log("tester", data)
 
   return (
     <>
@@ -93,8 +97,8 @@ const PokemonDetail = () => {
                 alt={data.pokemon.name}
               />
               <div css={PokemonTypes}>
-                {data.pokemon.types.map((pokemon) => (
-                  <div css={Type}>
+                {data.pokemon.types.map((pokemon, idx) => (
+                  <div key={String(idx)} css={Type}>
                     <span>{pokemon.type.name}</span>
                   </div>
                 ))}
@@ -117,8 +121,8 @@ const PokemonDetail = () => {
             <div css={PokemonMoveContainer}>
               <h2>Move List</h2>
               <div css={PokemonMoves}>
-                {data.pokemon.moves.map((pokemon) => (
-                  <div css={Move}>
+                {data.pokemon.moves.map((pokemon, idx) => (
+                  <div key={String(idx)} css={Move}>
                     <span>{pokemon.move.name}</span>
                   </div>
                 ))}

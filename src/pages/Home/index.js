@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useSearchParams, createSearchParams, useNavigate } from "react-router-dom";
 import { Card } from "components";
-import { Modal } from "containers";
+import { ErrorPage, Modal } from "containers";
 import { useLazyQuery } from "@apollo/client";
 import { GET_POKEMONS } from "queries";
 import { HomeContainer, HomeButtonContainer, HomePageButton } from "./_style";
@@ -90,6 +91,8 @@ const Home = () => {
       type: "loading/hide",
     });
   };
+
+  if(error) return <ErrorPage />
 
   return (
     <>
